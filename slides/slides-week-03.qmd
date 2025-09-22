@@ -1,0 +1,167 @@
+---
+title: R in 3 Months Week 3 (Data Visualization)
+format:
+  rfortherestofus-slides-revealjs:
+    menu: false
+    progress: true
+    slide-number: true
+    show-slide-number: print
+    center: true
+    incremental: true
+    auto-animate: true
+execute: 
+  message: false
+  warning: false
+  cache: false
+  # eval: false
+  echo: true
+title-slide-attributes:
+  data-background-image: assets/rru-hex-bg-gradient-dark.svg
+  data-background-size: cover
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| echo: false
+library(tidyverse)
+library(palmerpenguins)
+```
+
+## What is the most confusing thing about ggplot?
+
+Please put your answer in the chat!
+
+# Agenda
+
+1. Housekeeping
+
+1. Example projects
+
+1. Data viz tips
+
+1. Data viz exercise
+
+1. Next week
+
+
+::: {.notes}
+https://rin3spring2025.rfortherestofus.com/slides/slides-week-03.html
+:::
+
+# Housekeeping {.inverse}
+
+## Problems with Videos? {.inverse}
+
+## Housekeeping
+
+1. Co-working session next week will be **Monday** instead of Tuesday (same time)
+
+# Example Projects {.inverse}
+
+# Data Viz Tips {.inverse}
+
+## Color vs fill
+
+> Why is it that the color= option is treated differently by geom_point and geom_col? The logic seems inconsistent here since "color=" is used as if it is "fill =" by geom_point. What if I want the scatter plot to have black dots with outline color different by island?
+
+## Applying values specific color/fill properties
+
+> When using scale_color_manual, do you need to specify the order in which colors are applied to a certain category? I assume it matters. How will I know which colors are being applied to specific data?
+
+::: {.notes}
+https://rfortherestofus.com/courses/r-in-3-months-fall-2023/lessons/setting-color-and-fill-scales#comments
+:::
+
+## Labels vs breaks
+
+> Why is this code showing the text 152 above the y axis text 120?
+
+---
+
+```{r}
+#| echo: false
+penguins_by_species <-
+  penguins |>
+  count(species)
+
+ggplot(
+  penguins_by_species,
+  aes(
+    x = species,
+    y = n,
+    fill = species,
+    label = n
+  )
+) +
+  geom_bar(stat = "identity") +
+  scale_fill_viridis_d() +
+  scale_y_continuous(
+    limits = c(0, 200),
+    labels = c(0, 40, 80, 120, 160)
+  ) +
+  geom_label(vjust = 1.5, color = "white")
+```
+
+---
+
+```{r}
+#| eval: false
+
+penguins_by_species <-
+  penguins |>
+  count(species)
+
+ggplot(
+  penguins_by_species,
+  aes(
+    x = species,
+    y = n,
+    fill = species,
+    label = n
+  )
+) +
+  geom_bar(stat = "identity") +
+  scale_fill_viridis_d() +
+  scale_y_continuous(
+    limits = c(0, 200),
+    labels = c(0, 40, 80, 120, 160)
+  ) +
+  geom_label(vjust = 1.5, color = "white")
+```
+
+::: {.notes}
+https://rfortherestofus.com/courses/r-in-3-months-fall-2023/lessons/setting-x-and-y-scales#comments
+:::
+
+## Is there a "correct" order to put geoms, scales, themes, etc?
+
+## Dropping points in scatterplots
+
+## Width of bars in bar charts
+
+## Reordering bar charts
+
+::: {.notes}
+https://rfortherestofus.com/courses/r-in-3-months-spring-2025/lessons/reorder-plots-to-highlight-findings-v2
+:::
+
+## Wrapping long text in charts
+
+# Data Viz Exercise {.inverse}
+
+## Data Viz Exercise
+
+![](assets/median-income-example.png)
+
+::: notes
+https://raw.githubusercontent.com/rfortherestofus/rin3-spring-2025/refs/heads/main/misc/median-income-viz.R
+:::
+
+# Next Week
+
+You'll be learning about Quarto!
+
+- Course assignment: learn the basics of Quarto
+
+- Project assignment: take what you've done so far and turn it into a Quarto document
