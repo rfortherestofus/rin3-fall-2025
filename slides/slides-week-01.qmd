@@ -330,9 +330,9 @@ Share with the people in your breakout room:
 
 [![](assets/feedback.jpeg)](https://rfortherestofus.com/feedback/91e3f4b3-74ab-4c1d-9bed-e7e3fc961a0c)
 
-## Forum
+## Discord
 
-[![](assets/forum.png)](https://rfortherestofus.com/courses/r-in-3-months-fall-2025/forum)
+[![](assets/discord.png)](https://rfortherestofus.com/courses/r-in-3-months-fall-2025/forum)
 
 ::: {.notes}
 - Lesson-specific questions on lessons
