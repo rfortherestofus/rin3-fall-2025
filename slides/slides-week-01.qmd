@@ -336,7 +336,7 @@ Share with the people in your breakout room:
 
 ::: {.notes}
 - Lesson-specific questions on lessons
-- General questions in forum
+- General questions and community engagement on [Discord](https://discord.gg/hPhGrz6E4g)
 - You should always feel free to email David and Gracielle with any questions
 :::
 
