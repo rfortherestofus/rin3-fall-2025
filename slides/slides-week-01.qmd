@@ -402,6 +402,8 @@ Paste email on chat if needed: gracielle@rfortherestofus.com
 # Getting Started Questions {.inverse}
 
 ::: {.notes}
+- RTools
+
 - Tidyverse loading message
 - Whether packages are loaded vs installed (packages tab)
 - read.csv vs read_csv
