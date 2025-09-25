@@ -1,3 +1,3 @@
 library(tidyverse)
 
-penguins <- read.csv("data-raw/penguins.csv")
+penguins <- read_csv("data-raw/penguins.csv")
