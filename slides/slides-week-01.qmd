@@ -332,7 +332,7 @@ Share with the people in your breakout room:
 
 ## Discord
 
-[![](assets/discord.png)](https://rfortherestofus.com/courses/r-in-3-months-fall-2025/forum)
+[![](assets/discord.png)](https://discord.com/channels/1133176082875551765/1133176082875551768)
 
 ::: {.notes}
 - Lesson-specific questions on lessons
