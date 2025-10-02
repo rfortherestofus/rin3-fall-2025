@@ -110,6 +110,8 @@ https://rin3fall2025.rfortherestofus.com/slides/slides-week-02.html
 ## The `.by` argument in summarize()
 
 ::: {.notes}
+An observation that I am curious about: The group_by with two variables appears to sort the tibble by the first variable alphabetically (island), while the alternative method David showed (i.e., the .by) sorts it by the year in the tibble. Is this always the case or was this simply by chance that this change in sorting of the summary tibble occured?
+
 - .by argument keeps original order
 - group_by() changes order to alphabetical
 :::
