@@ -59,7 +59,7 @@ https://rin3fall2025.rfortherestofus.com/slides/slides-week-02.html
 
 ## Zoom Links {.inverse}
 
-## Discord
+## Discord {.inverse}
 
 ## Project Assignments
 

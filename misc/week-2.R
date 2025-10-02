@@ -8,7 +8,32 @@ penguins <- read_csv("data-raw/penguins.csv")
 
 read_csv("data-raw/2022-obtn-by-county.xlsx")
 
-read_excel("data-raw/2019-obtn-by-county.xlsx")
+read_excel("data-raw/2019-obtn-by-county.xlsx",
+           sheet = "Total Population")
+
+read_csv("data-raw/penguins.csv")
+
+
+# Exploration -------------------------------------------------------------
+
+penguins |> 
+  filter(year == 2007)
+
+penguins %>% 
+  filter(year == 2007)
+
+
+adelie_mean_bill_length <- 
+penguins |> 
+  filter(species == "Adelie") |> 
+  summarize(mean_bill_length = mean(bill_length_mm, na.rm = TRUE))
+  
+# adelie_mean_bill_length_2007 <- 
+penguins |> 
+  filter(year == 2007) |> 
+  filter(species == "Adelie") |> 
+  summarize(mean_bill_length = mean(bill_length_mm, na.rm = TRUE))
+
 
 # The .by argument ------------------------------------------------------
 
@@ -19,7 +44,21 @@ penguins |>
       na.rm = TRUE
     ),
     .by = c(island, species)
-  )
+  ) |> 
+  slice_max(order_by = mean_bill_length,
+            n = 1)
+
+penguins |>
+  group_by(island, species) |> 
+  summarize(
+    mean_bill_length = mean(
+      bill_length_mm,
+      na.rm = TRUE
+    )
+  ) |> 
+  ungroup() |> 
+  slice_max(order_by = mean_bill_length,
+            n = 1)
 
 # Working directories -----------------------------------------------------
 
@@ -58,7 +97,7 @@ penguins |>
 
 # NA values ---------------------------------------------------------------
 
-read_csv("data-raw/penguins_data.csv") |>
+read_csv("data-raw/penguins_data.csv", na = c("-999")) |>
   view()
 
 
@@ -79,13 +118,13 @@ penguins |>
   drop_na(body_mass_g, sex) |>
   group_by(sex) |>
   summarize(mean_body_mass = mean(body_mass_g)) |>
-  mutate(mean_body_mass = round(mean_body_mass, digits = 0))
+  mutate(mean_body_mass = round(mean_body_mass, digits = 1)) |> 
+  view()
 
 # Viewing your dataset ----------------------------------------------------
 
-penguins |>
-  filter(species == "Adelie") |>
+penguins |> 
   view()
 
 penguins |>
-  print(n = Inf)
+  print(n = 100)
