@@ -109,6 +109,11 @@ https://rin3fall2025.rfortherestofus.com/slides/slides-week-02.html
 
 ## The `.by` argument in summarize()
 
+::: {.notes}
+- .by argument keeps original order
+- group_by() changes order to alphabetical
+:::
+
 ## How to Import Excel Files 
 
 . . .
@@ -149,9 +154,9 @@ Can you set up R to always load certain packages?
 > What is the point of creating both a R script file and a R project file? I understand that R project is a higher level structure and maybe it can pull from outputs of different R script files... please de-mystify.
 
 ::: {.notes}
-Talk about relative vs absolute file paths
-
-Talk about reproducibility for others if you use absolute file paths
+- Give tour of what it was like before RStudio
+- Talk about relative vs absolute file paths
+- Talk about reproducibility for others if you use absolute file paths
 :::
 
 ## Working directories
@@ -162,9 +167,12 @@ Talk about reproducibility for others if you use absolute file paths
 
 - This is easier to type and more reproducible
 
+## .Rdata and .Rhistory files {.inverse}
+
 ## Keyboard shortcut to run code
 
-- command + enter (Mac) or control + enter (Windows)
+- command + enter (Mac)
+- control + enter (Windows)
 
 ## Difference between native pipe and tidyverse pipe
 
@@ -230,6 +238,8 @@ penguins |>
 penguins |>
   select(-1, island:year)
 ```
+
+. . .
 
 Does not remove the "species" variable but this does:
 
@@ -336,8 +346,6 @@ penguins
 ::: {.notes}
 Show glimpse() and view() and how to popup data by clicking on it
 :::
-
-# .Rdata and .Rhistory files {.inverse}ee
 
 # Typos happen to everone
 

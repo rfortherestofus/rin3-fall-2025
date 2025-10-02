@@ -328,6 +328,22 @@
 </section>
 <section id="the-.by-argument-in-summarize" class="slide level2 center">
 <h2>The <code>.by</code> argument in summarize()</h2>
+<aside class="notes">
+<ul>
+<li>.by argument keeps original order</li>
+<li>group_by() changes order to alphabetical</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="how-to-import-excel-files" class="slide level2 center">
 <h2>How to Import Excel Files</h2>
@@ -364,8 +380,11 @@
 <p>What is the point of creating both a R script file and a R project file? I understand that R project is a higher level structure and maybe it can pull from outputs of different R script files… please de-mystify.</p>
 </blockquote>
 <aside class="notes">
-<p>Talk about relative vs absolute file paths</p>
-<p>Talk about reproducibility for others if you use absolute file paths</p>
+<ul>
+<li>Give tour of what it was like before RStudio</li>
+<li>Talk about relative vs absolute file paths</li>
+<li>Talk about reproducibility for others if you use absolute file paths</li>
+</ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -386,10 +405,14 @@
 <li class="fragment"><p>This is easier to type and more reproducible</p></li>
 </ul>
 </section>
+<section id="rdata-and-.rhistory-files" class="slide level2 inverse center">
+<h2>.Rdata and .Rhistory files</h2>
+</section>
 <section id="keyboard-shortcut-to-run-code" class="slide level2 center">
 <h2>Keyboard shortcut to run code</h2>
 <ul>
-<li class="fragment">command + enter (Mac) or control + enter (Windows)</li>
+<li class="fragment">command + enter (Mac)</li>
+<li class="fragment">control + enter (Windows)</li>
 </ul>
 </section>
 <section id="difference-between-native-pipe-and-tidyverse-pipe" class="slide level2 center">
@@ -472,10 +495,12 @@
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a>penguins <span class="sc">|&gt;</span></span>
 <span id="cb6-2"><a href=""></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="dv">1</span>, island<span class="sc">:</span>year)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="fragment">
 <p>Does not remove the “species” variable but this does:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>penguins <span class="sc">|&gt;</span></span>
 <span id="cb7-2"><a href=""></a>  <span class="fu">select</span>(island<span class="sc">:</span>year)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
 <section id="how-r-handles-na-values" class="slide level2 center">
@@ -586,11 +611,6 @@
           display:block!important;
       }</style></aside>
 </section></section>
-<section id="rdata-and-.rhistory-files" class="title-slide slide level1 inverse center">
-<h1>.Rdata and .Rhistory files</h1>
-
-</section>
-
 <section id="typos-happen-to-everone" class="title-slide slide level1 center">
 <h1>Typos happen to everone</h1>
 

@@ -12,6 +12,15 @@ read_excel("data-raw/2019-obtn-by-county.xlsx")
 
 # The .by argument ------------------------------------------------------
 
+penguins |>
+  summarize(
+    mean_bill_length = mean(
+      bill_length_mm,
+      na.rm = TRUE
+    ),
+    .by = c(island, species)
+  )
+
 # Working directories -----------------------------------------------------
 
 penguins_mean_bill_length <-
