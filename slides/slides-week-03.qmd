@@ -36,9 +36,7 @@ Please put your answer in the chat!
 
 1. Housekeeping
 
-1. Example projects
-
-1. Data viz tips
+1. Data viz questions
 
 1. Data viz exercise
 
@@ -51,15 +49,11 @@ https://rin3fall2025.rfortherestofus.com/slides/slides-week-03.html
 
 # Housekeeping {.inverse}
 
-## Problems with Videos? {.inverse}
-
 ## Housekeeping
 
-1. Co-working session next week will be **Monday** instead of Tuesday (same time)
+- We are working on getting email notifications when you **submit** assignments
 
-# Example Projects {.inverse}
-
-# Data Viz Tips {.inverse}
+# Data Viz Questions {.inverse}
 
 ## Color vs fill
 
@@ -73,66 +67,27 @@ https://rin3fall2025.rfortherestofus.com/slides/slides-week-03.html
 https://rfortherestofus.com/courses/r-in-3-months-fall-2023/lessons/setting-color-and-fill-scales#comments
 :::
 
-## Labels vs breaks
+## `geom_bar()` vs `geom_col()`
 
-> Why is this code showing the text 152 above the y axis text 120?
+![](assets/geom-bar-col-question-part-1.png)
 
----
+## `geom_bar()` vs `geom_col()`
 
-```{r}
-#| echo: false
-penguins_by_species <-
-  penguins |>
-  count(species)
+![](assets/geom-bar-col-question-part-2.png)
 
-ggplot(
-  penguins_by_species,
-  aes(
-    x = species,
-    y = n,
-    fill = species,
-    label = n
-  )
-) +
-  geom_bar(stat = "identity") +
-  scale_fill_viridis_d() +
-  scale_y_continuous(
-    limits = c(0, 200),
-    labels = c(0, 40, 80, 120, 160)
-  ) +
-  geom_label(vjust = 1.5, color = "white")
-```
+## `geom_bar()` vs `geom_col()`
 
----
+:::: {.columns}
 
-```{r}
-#| eval: false
-
-penguins_by_species <-
-  penguins |>
-  count(species)
-
-ggplot(
-  penguins_by_species,
-  aes(
-    x = species,
-    y = n,
-    fill = species,
-    label = n
-  )
-) +
-  geom_bar(stat = "identity") +
-  scale_fill_viridis_d() +
-  scale_y_continuous(
-    limits = c(0, 200),
-    labels = c(0, 40, 80, 120, 160)
-  ) +
-  geom_label(vjust = 1.5, color = "white")
-```
-
-::: {.notes}
-https://rfortherestofus.com/courses/r-in-3-months-fall-2023/lessons/setting-x-and-y-scales#comments
+::: {.column width="50%"}
+![](assets/geom-bar-col-question-part-1.png)
 :::
+
+::: {.column width="50%"}
+![](assets/geom-bar-col-question-part-2.png)
+:::
+
+::::
 
 ## Is there a "correct" order to put geoms, scales, themes, etc?
 
@@ -143,7 +98,7 @@ https://rfortherestofus.com/courses/r-in-3-months-fall-2023/lessons/setting-x-an
 ## Reordering bar charts
 
 ::: {.notes}
-https://rfortherestofus.com/courses/r-in-3-months-spring-2025/lessons/reorder-plots-to-highlight-findings-v2
+https://rfortherestofus.com/courses/r-in-3-months-fall-2025/lessons/reorder-plots-to-highlight-findings-v2
 :::
 
 ## Wrapping long text in charts

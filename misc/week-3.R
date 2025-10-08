@@ -27,51 +27,8 @@ ggplot(
     color = island
   )
 ) +
-  geom_point(shape = 21)
+  geom_point()
 
-
-ggplot(
-  penguins,
-  aes(
-    x = flipper_length_mm,
-    y = body_mass_g,
-    color = island
-  )
-) +
-  geom_point(shape = 21)
-
-penguins |>
-  filter(body_mass_g > 3500) |>
-  ggplot(aes(
-    x = flipper_length_mm,
-    y = body_mass_g,
-    fill = island,
-  )) +
-  # scale_fill_viridis_d() +
-  scale_fill_viridis_d(option = "inferno") +
-  geom_point(shape = 21) +
-  theme_economist()
-
-biggest_penguin <-
-  penguins |>
-  slice_max(order_by = body_mass_g, n = 1)
-
-ggplot(
-  penguins,
-  aes(
-    x = flipper_length_mm,
-    y = body_mass_g,
-    color = island
-  )
-) +
-  geom_point(shape = 21) +
-  geom_point(
-    data = biggest_penguin,
-    color = "orange",
-    size = 4,
-    alpha = 0.25
-  ) +
-  theme_minimal()
 
 ggplot(
   data = penguins_by_species,
@@ -83,6 +40,37 @@ ggplot(
 ) +
   geom_col()
 
+ggplot(
+  penguins,
+  aes(
+    x = flipper_length_mm,
+    y = body_mass_g,
+    color = island
+  )
+) +
+  geom_point(shape = 21)
+
+
+# `geom_bar()` vs `geom_col()` -------------------------------------------
+
+penguins_by_species <-
+  penguins |>
+  count(species)
+
+ggplot(
+  data = penguins_by_species,
+  mapping = aes(x = species)
+) +
+  geom_bar()
+
+ggplot(
+  data = penguins_by_species,
+  mapping = aes(
+    x = species,
+    y = n
+  )
+) +
+  geom_col()
 
 # Applying values specific color/fill properties -------------------------
 
@@ -94,32 +82,7 @@ ggplot(
     fill = species
   )
 ) +
-  geom_col() +
-  scale_fill_manual(
-    values = c(
-      "Chinstrap" = "yellow",
-      "Adelie" = "blue",
-      "Gentoo" = "green"
-    )
-  )
-
-# Labels vs breaks -------------------------------------------------------
-
-penguins_by_species
-
-ggplot(
-  penguins_by_species,
-  aes(x = species, y = n, fill = species, label = n)
-) +
-  geom_bar(stat = "identity") +
-  scale_fill_viridis_d() +
-  scale_y_continuous(
-    limits = c(0, 200),
-    breaks = seq(from = 0, to = 200, by = 5),
-    labels = seq(from = 0, to = 200, by = 5)
-    # labels = c(0, 40, 80, 120, 160)
-  ) +
-  geom_label(vjust = 1.5, color = "white")
+  geom_col()
 
 # Dropping Points in Scatterplots ----------------------------------------
 

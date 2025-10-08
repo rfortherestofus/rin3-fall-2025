@@ -7,3 +7,6 @@ post_course_participants(
   google_sheets_url = "https://docs.google.com/spreadsheets/d/1Rz7_1_CzxURdhPHRj9YAzV-tgQP6xQmY_qV0VPjhPYs/edit?gid=505130318#gid=505130318",
   view_sheet = FALSE
 )
+
+get_course_participants("Using Git and GitHub with R") |>
+  nrow()
