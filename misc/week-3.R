@@ -17,6 +17,19 @@ penguins_by_species <-
   count(species)
 
 
+# `==` and lowercase `x` and `y` ------------------------------------------
+
+ggplot(
+  data = penguins, # why can't I use == within this function?
+  mapping = aes(
+    x = flipper_length_mm, # must be lowercase x and y
+    y = body_mass_g
+  )
+) +
+  geom_point()
+
+
+
 # Color vs Fill ----------------------------------------------------------
 
 ggplot(
@@ -94,9 +107,7 @@ ggplot(
   )
 ) +
   geom_point() +
-  scale_x_continuous(
-    limits = c(170, 200)
-  )
+  scale_x_continuous(limits = c(170, 200))
 
 penguins_filtered <-
   penguins |>

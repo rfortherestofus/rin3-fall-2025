@@ -55,6 +55,20 @@ https://rin3fall2025.rfortherestofus.com/slides/slides-week-03.html
 
 # Data Viz Questions {.inverse}
 
+## `==` and lowercase `x` and `y`
+
+```{r}
+ggplot(
+  data = penguins, # why can't I use == within this function?
+  mapping = aes(
+    x = flipper_length_mm, # must be lowercase x and y
+    y = body_mass_g
+  )
+) +
+  geom_point()
+```
+
+
 ## Color vs fill
 
 > Why is it that the color= option is treated differently by geom_point and geom_col? The logic seems inconsistent here since "color=" is used as if it is "fill =" by geom_point. What if I want the scatter plot to have black dots with outline color different by island?
@@ -89,19 +103,19 @@ https://rfortherestofus.com/courses/r-in-3-months-fall-2023/lessons/setting-colo
 
 ::::
 
-## Is there a "correct" order to put geoms, scales, themes, etc?
+## Is there a "correct" order to put geoms, scales, themes, etc? {.inverse}
 
-## Dropping points in scatterplots
+## Dropping points in scatterplots {.inverse}
 
-## Width of bars in bar charts
+## Width of bars in bar charts {.inverse}
 
-## Reordering bar charts
+## Reordering bar charts {.inverse}
 
 ::: {.notes}
 https://rfortherestofus.com/courses/r-in-3-months-fall-2025/lessons/reorder-plots-to-highlight-findings-v2
 :::
 
-## Wrapping long text in charts
+## Wrapping long text in charts {.inverse}
 
 # Data Viz Exercise {.inverse}
 
