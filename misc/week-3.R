@@ -1,7 +1,6 @@
 # Load Packages -----------------------------------------------------------
 
 library(tidyverse)
-library(ggthemes)
 
 # Import Data -------------------------------------------------------------
 
@@ -20,9 +19,11 @@ penguins_by_species <-
 # `==` and lowercase `x` and `y` ------------------------------------------
 
 ggplot(
-  data = penguins, # why can't I use == within this function?
+  data = penguins,
+  # why can't I use == within this function?
   mapping = aes(
-    x = flipper_length_mm, # must be lowercase x and y
+    x = flipper_length_mm,
+    # must be lowercase x and y
     y = body_mass_g
   )
 ) +
@@ -48,7 +49,7 @@ ggplot(
   mapping = aes(
     x = species,
     y = n,
-    color = species
+    fill = species
   )
 ) +
   geom_col()
@@ -61,7 +62,10 @@ ggplot(
     color = island
   )
 ) +
-  geom_point(shape = 21)
+  geom_point(
+    shape = 21,
+    fill = "orange"
+  )
 
 
 # `geom_bar()` vs `geom_col()` -------------------------------------------
@@ -71,7 +75,7 @@ penguins_by_species <-
   count(species)
 
 ggplot(
-  data = penguins_by_species,
+  data = penguins,
   mapping = aes(x = species)
 ) +
   geom_bar()
@@ -95,7 +99,14 @@ ggplot(
     fill = species
   )
 ) +
-  geom_col()
+  geom_col() +
+  scale_fill_manual(
+    values = c(
+      "Adelie" = "green",
+      "Chinstrap" = "red",
+      "Gentoo" = "orange"
+    )
+  )
 
 # Dropping Points in Scatterplots ----------------------------------------
 
@@ -121,10 +132,7 @@ ggplot(
     y = body_mass_g
   )
 ) +
-  geom_point() +
-  scale_x_continuous(
-    limits = c(170, 210)
-  )
+  geom_point()
 
 # Bar Chart Width ---------------------------------------------------------
 
@@ -137,44 +145,50 @@ ggplot(
     color = island
   )
 ) +
-  geom_col(width = 0.95) +
+  geom_col(width = 0.5) +
   theme_minimal()
 
 ggplot(
   data = penguins,
   aes(x = bill_length_mm)
 ) +
-  geom_histogram(binwidth = 0.5)
+  geom_histogram(binwidth = 1)
 
 # Reordering Bar Charts ---------------------------------------------------
 
 ggplot(
-  data = penguins_bill_length_by_island,
-  aes(
-    x = island,
-    y = mean_bill_length
+  data = penguins_by_species,
+  mapping = aes(
+    x = species,
+    y = n,
+    fill = species
   )
 ) +
   geom_col()
 
 ggplot(
-  data = penguins_bill_length_by_island,
-  aes(
-    x = reorder(island, mean_bill_length),
-    y = mean_bill_length
+  data = penguins_by_species,
+  mapping = aes(
+    x = reorder(species, n, decreasing = TRUE),
+    y = n,
+    fill = species
   )
 ) +
   geom_col()
 
-penguins_bill_length_by_island_reordered <-
-  penguins_bill_length_by_island |>
-  mutate(island = fct_reorder(island, mean_bill_length))
+penguins_by_species_reordered <-
+  penguins_by_species |>
+  arrange(n)
+# mutate(species = fct(species, levels = c("Adelie", "Chinstrap", "Gentoo")))
+# mutate(species = fct_reorder(species, n)) |>
+# mutate(species = fct_rev(species))
 
 ggplot(
-  data = penguins_bill_length_by_island_reordered,
-  aes(
-    x = island,
-    y = mean_bill_length
+  data = penguins_by_species,
+  mapping = aes(
+    x = species,
+    y = n,
+    fill = species
   )
 ) +
   geom_col()
@@ -210,3 +224,53 @@ ggplot(
 ) +
   geom_line() +
   facet_wrap(vars(country_wrapped))
+
+gapminder |>
+  mutate(country_wrapped = str_wrap(country, width = 10)) |>
+  ggplot(
+    aes(
+      x = year,
+      y = lifeExp
+    )
+  ) +
+  geom_line() +
+  facet_wrap(vars(country_wrapped)) +
+  theme(axis.text.x = element_blank())
+
+
+ggplot(
+  data = penguins,
+  mapping = aes(
+    x = flipper_length_mm,
+    y = body_mass_g,
+    color = flipper_length_mm,
+    size = flipper_length_mm
+  )
+) +
+  geom_point() 
+
+gapminder |> 
+  filter(country == "Afghanistan") |>  
+  mutate(year = as.character(year)) |> 
+ggplot(
+  aes(
+    x = year,
+    y = lifeExp,
+    fill = year
+  )
+) +
+  geom_col()
+
+penguins |> 
+  count(species) |> 
+  mutate(pct = n / sum(n)) |> 
+  ggplot(
+    aes(
+      y = pct,
+      x = 1,
+      fill = species,
+      label = pct
+    )
+  ) +
+  geom_col() +
+  geom_text(position = position_stack(vjust = 0.5))

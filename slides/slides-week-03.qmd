@@ -58,6 +58,12 @@ https://rin3fall2025.rfortherestofus.com/slides/slides-week-03.html
 ## `==` and lowercase `x` and `y`
 
 ```{r}
+penguins |> 
+  filter(species == "Gentoo")
+```
+
+
+```{r}
 ggplot(
   data = penguins, # why can't I use == within this function?
   mapping = aes(
