@@ -56,12 +56,6 @@ https://rin3fall2025.rfortherestofus.com/slides/slides-week-04.html
 
 # Questions on Data Wrangling or Data Viz? {.inverse}
 
-::: {.notes}
-scales::dollar()
-
-ungroup()
-:::
-
 ## When is data real?
 
 > I would like you to help me confirm that once an Object appears in the Environment Panel, it's automatically saved. In this case our object is `penguins`.
@@ -71,7 +65,7 @@ ungroup()
 ![](assets/where-does-data-live.png)
 
 ::: {.notes}
-You will later change your settings so that you only have objects when you run code to create them
+You learned this week to change your settings so that you only have objects when you run code to create them
 :::
 
 ## When is data real?
@@ -98,38 +92,19 @@ Talk about parameterized reporting making it worth it
 
 ## Quarto Exercise
 
-1. Copy the code from [this Quarto document](https://raw.githubusercontent.com/rfortherestofus/rin3-spring-2025/refs/heads/main/misc/no-render.qmd). Figure out why it won't render and change it so that it will!
+1. Copy the code from [this Quarto document](https://raw.githubusercontent.com/rfortherestofus/rin3-fall-2025/refs/heads/main/misc/no-render.qmd). Figure out why it won't render and change it so that it will!
 
-1. Copy the code from [this second Quarto document](https://raw.githubusercontent.com/rfortherestofus/rin3-spring-2025/refs/heads/main/misc/guess-what.qmd). There are a series of questions in it. Tackle them one by one, making changes to the document as you do so.
-
-
+1. Copy the code from [this second Quarto document](https://raw.githubusercontent.com/rfortherestofus/rin3-fall-2025/refs/heads/main/misc/guess-what.qmd). There are a series of questions in it. Tackle them one by one, making changes to the document as you do so.
 
 # Quarto Tips {.inverse}
 
-## Markdown Text Shows Up in Many Places!
+## Markdown Text Shows Up in Many Places! {.inverse}
 
-1. Lesson comments
-
-## Visual Editor
-
-## Indented Lists
-
-> How do you add subitems in lists? I tried my best but I am not liking how my subitems show up as a dash.
-
-1. List item
-
- 1. Indented list item
-    
-. . .
-
-- List item
-
-    - Indented list item
-    
 ::: {.notes}
-4 spaces
+Discord, lesson questions
 :::
 
+## Visual Editor {.inverse}
 
 ## How to structure your Quarto documents
 
@@ -142,6 +117,10 @@ Talk about parameterized reporting making it worth it
 1. Code chunks used throughout to make outputs (graphs, tables, maps, etc)
 
 1. I also do data cleaning/tidying in a separate R script file (you'll learn about this soon)
+
+::: {.notes}
+Show state immunization reports: https://github.com/claritydatastudio/state-immunization-reports
+:::
 
 ## How I use Quarto documents is not how you have to use Quarto documents!
 
@@ -236,26 +215,10 @@ Column 2
 
 - There are lessons on each of these later in R in 3 Months!
 
-# General Tip {.inverse}
-
-## How to Make Sense of R Help Docs
-
-> I looked into the geomtextpath package and even found a fairly helpful guide (https://cran.r-project.org/web/packages/geomtextpath/vignettes/geomtextpath.html) but I'm still at a loss on how to incorporate the names into the lines themselves. I wish I were better at understanding the Help guides. 
-
-. . .
-
-- [We've added a lesson from previous coach Charlie on reading documentation pages](https://rfortherestofus.com/courses/r-in-3-months-spring-2025/lessons/understanding-documentation-pages)
-
-- Also [check out the appendix in Kieran Healy's book](https://socviz.co/appendix.html#a-little-more-about-r)
-
-::: {.notes}
-https://rfortherestofus.com/courses/r-in-3-months-spring-20des25/lessons/understanding-documentation-pages
-:::
-
 ## Any Other Quarto Questions? {.inverse}
 
 # Next Week
 
 - Catch-up week! No live session or co-working sessions are happening, but please reach out to Gracielle for any help you may need!
 
-- For following week, you will be learning about advanced data wrangling, focusing on the concept of tidy data. Lessons are up now so you can start whenever you would like to!
+- For following week, you will be learning about advanced data wrangling, focusing on the concept of tidy data. You can start whenever you would like to!

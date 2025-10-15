@@ -6,8 +6,8 @@
 <script src="slides-week-04_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="slides-week-04_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="slides-week-04_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="slides-week-04_files/libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.6.40">
+<link href="slides-week-04_files/libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.31">
 
   <title>R in 3 Months Week 4 (Quarto)</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -28,8 +28,9 @@
       vertical-align: middle;
     }
     /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -40,7 +41,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -93,7 +94,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="slides-week-04_files/libs/revealjs/dist/theme/quarto-afeb633e90839fab47ee906c56adbef2.css">
+  <link rel="stylesheet" href="slides-week-04_files/libs/revealjs/dist/theme/quarto-60f888cd3db5145ade4b8c62980eae51.css">
   <link href="slides-week-04_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="slides-week-04_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="slides-week-04_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -236,20 +237,7 @@
 <section>
 <section id="questions-on-data-wrangling-or-data-viz" class="title-slide slide level1 inverse center">
 <h1>Questions on Data Wrangling or Data Viz?</h1>
-<aside class="notes">
-<p>scales::dollar()</p>
-<p>ungroup()</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+
 </section>
 <section id="when-is-data-real" class="slide level2 center">
 <h2>When is data real?</h2>
@@ -259,7 +247,7 @@
 <div class="fragment">
 <p><img data-src="assets/where-does-data-live.png"></p>
 <aside class="notes">
-<p>You will later change your settings so that you only have objects when you run code to create them</p>
+<p>You learned this week to change your settings so that you only have objects when you run code to create them</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -323,8 +311,8 @@
 <section id="quarto-exercise-1" class="slide level2 center">
 <h2>Quarto Exercise</h2>
 <ol type="1">
-<li class="fragment"><p>Copy the code from <a href="https://raw.githubusercontent.com/rfortherestofus/rin3-spring-2025/refs/heads/main/misc/no-render.qmd">this Quarto document</a>. Figure out why it won’t render and change it so that it will!</p></li>
-<li class="fragment"><p>Copy the code from <a href="https://raw.githubusercontent.com/rfortherestofus/rin3-spring-2025/refs/heads/main/misc/guess-what.qmd">this second Quarto document</a>. There are a series of questions in it. Tackle them one by one, making changes to the document as you do so.</p></li>
+<li class="fragment"><p>Copy the code from <a href="https://raw.githubusercontent.com/rfortherestofus/rin3-fall-2025/refs/heads/main/misc/no-render.qmd">this Quarto document</a>. Figure out why it won’t render and change it so that it will!</p></li>
+<li class="fragment"><p>Copy the code from <a href="https://raw.githubusercontent.com/rfortherestofus/rin3-fall-2025/refs/heads/main/misc/guess-what.qmd">this second Quarto document</a>. There are a series of questions in it. Tackle them one by one, making changes to the document as you do so.</p></li>
 </ol>
 </section></section>
 <section>
@@ -332,33 +320,10 @@
 <h1>Quarto Tips</h1>
 
 </section>
-<section id="markdown-text-shows-up-in-many-places" class="slide level2 center">
+<section id="markdown-text-shows-up-in-many-places" class="slide level2 inverse center">
 <h2>Markdown Text Shows Up in Many Places!</h2>
-<ol type="1">
-<li class="fragment">Lesson comments</li>
-</ol>
-</section>
-<section id="visual-editor" class="slide level2 center">
-<h2>Visual Editor</h2>
-</section>
-<section id="indented-lists" class="slide level2 center">
-<h2>Indented Lists</h2>
-<blockquote>
-<p>How do you add subitems in lists? I tried my best but I am not liking how my subitems show up as a dash.</p>
-</blockquote>
-<ol type="1">
-<li class="fragment"><p>List item</p></li>
-<li class="fragment"><p>Indented list item</p></li>
-</ol>
-<div class="fragment">
-<ul>
-<li class="fragment"><p>List item</p>
-<ul>
-<li class="fragment">Indented list item</li>
-</ul></li>
-</ul>
 <aside class="notes">
-<p>4 spaces</p>
+<p>Discord, lesson questions</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -370,7 +335,9 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</div>
+</section>
+<section id="visual-editor" class="slide level2 inverse center">
+<h2>Visual Editor</h2>
 </section>
 <section id="how-to-structure-your-quarto-documents" class="slide level2 center">
 <h2>How to structure your Quarto documents</h2>
@@ -381,6 +348,19 @@
 <li class="fragment"><p>Code chunks used throughout to make outputs (graphs, tables, maps, etc)</p></li>
 <li class="fragment"><p>I also do data cleaning/tidying in a separate R script file (you’ll learn about this soon)</p></li>
 </ol>
+<aside class="notes">
+<p>Show state immunization reports: https://github.com/claritydatastudio/state-immunization-reports</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="how-i-use-quarto-documents-is-not-how-you-have-to-use-quarto-documents" class="slide level2 center">
 <h2>How I use Quarto documents is not how you have to use Quarto documents!</h2>
@@ -407,13 +387,13 @@
 <h2>How to change the size of plots in Quarto documents</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href=""></a><span class="in">```{r}</span></span>
-<span id="cb2-2"><a href=""></a><span class="in">#| echo: true</span></span>
-<span id="cb2-3"><a href=""></a><span class="in">#| fig-height: 1</span></span>
-<span id="cb2-4"><a href=""></a><span class="in">penguins |&gt; </span></span>
-<span id="cb2-5"><a href=""></a><span class="in">  count(island) |&gt; </span></span>
-<span id="cb2-6"><a href=""></a><span class="in">  ggplot(aes(x = island, </span></span>
-<span id="cb2-7"><a href=""></a><span class="in">             y = n)) +</span></span>
-<span id="cb2-8"><a href=""></a><span class="in">  geom_col()</span></span>
+<span id="cb2-2"><a href=""></a><span class="co">#| echo: true</span></span>
+<span id="cb2-3"><a href=""></a><span class="co">#| fig-height: 1</span></span>
+<span id="cb2-4"><a href=""></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb2-5"><a href=""></a>  <span class="fu">count</span>(island) <span class="sc">|&gt;</span> </span>
+<span id="cb2-6"><a href=""></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> island, </span>
+<span id="cb2-7"><a href=""></a>             <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb2-8"><a href=""></a>  <span class="fu">geom_col</span>()</span>
 <span id="cb2-9"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -476,36 +456,6 @@
 <li class="fragment"><p>For PDF, check out <a href="https://quarto.org/docs/output-formats/typst.html"><code>typst</code> format</a></p></li>
 <li class="fragment"><p>There are lessons on each of these later in R in 3 Months!</p></li>
 </ul>
-</section></section>
-<section>
-<section id="general-tip" class="title-slide slide level1 inverse center">
-<h1>General Tip</h1>
-
-</section>
-<section id="how-to-make-sense-of-r-help-docs" class="slide level2 center">
-<h2>How to Make Sense of R Help Docs</h2>
-<blockquote>
-<p>I looked into the geomtextpath package and even found a fairly helpful guide (https://cran.r-project.org/web/packages/geomtextpath/vignettes/geomtextpath.html) but I’m still at a loss on how to incorporate the names into the lines themselves. I wish I were better at understanding the Help guides.</p>
-</blockquote>
-<div class="fragment">
-<ul>
-<li class="fragment"><p><a href="https://rfortherestofus.com/courses/r-in-3-months-spring-2025/lessons/understanding-documentation-pages">We’ve added a lesson from previous coach Charlie on reading documentation pages</a></p></li>
-<li class="fragment"><p>Also <a href="https://socviz.co/appendix.html#a-little-more-about-r">check out the appendix in Kieran Healy’s book</a></p></li>
-</ul>
-<aside class="notes">
-<p>https://rfortherestofus.com/courses/r-in-3-months-spring-20des25/lessons/understanding-documentation-pages</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</div>
 </section>
 <section id="any-other-quarto-questions" class="slide level2 inverse center">
 <h2>Any Other Quarto Questions?</h2>
@@ -514,7 +464,7 @@
 <h1>Next Week</h1>
 <ul>
 <li class="fragment"><p>Catch-up week! No live session or co-working sessions are happening, but please reach out to Gracielle for any help you may need!</p></li>
-<li class="fragment"><p>For following week, you will be learning about advanced data wrangling, focusing on the concept of tidy data. Lessons are up now so you can start whenever you would like to!</p></li>
+<li class="fragment"><p>For following week, you will be learning about advanced data wrangling, focusing on the concept of tidy data. You can start whenever you would like to!</p></li>
 </ul>
 
 </section>
@@ -772,190 +722,172 @@
     </script>
 
     <script id="quarto-html-after-body" type="application/javascript">
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-      const toggleBodyColorMode = (bsSheetEl) => {
-        const mode = bsSheetEl.getAttribute("data-mode");
-        const bodyEl = window.document.querySelector("body");
-        if (mode === "dark") {
-          bodyEl.classList.add("quarto-dark");
-          bodyEl.classList.remove("quarto-light");
-        } else {
-          bodyEl.classList.add("quarto-light");
-          bodyEl.classList.remove("quarto-dark");
-        }
-      }
-      const toggleBodyColorPrimary = () => {
-        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-        if (bsSheetEl) {
-          toggleBodyColorMode(bsSheetEl);
-        }
-      }
-      toggleBodyColorPrimary();  
-      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
-      tabsets.forEach(function(tabset) {
-        const tabby = new Tabby('#' + tabset.id);
-      });
-      const isCodeAnnotation = (el) => {
-        for (const clz of el.classList) {
-          if (clz.startsWith('code-annotation-')) {                     
-            return true;
-          }
-        }
-        return false;
-      }
-      const onCopySuccess = function(e) {
-        // button target
-        const button = e.trigger;
-        // don't keep focus
-        button.blur();
-        // flash "checked"
-        button.classList.add('code-copy-button-checked');
-        var currentTitle = button.getAttribute("title");
-        button.setAttribute("title", "Copied!");
-        let tooltip;
-        if (window.bootstrap) {
-          button.setAttribute("data-bs-toggle", "tooltip");
-          button.setAttribute("data-bs-placement", "left");
-          button.setAttribute("data-bs-title", "Copied!");
-          tooltip = new bootstrap.Tooltip(button, 
-            { trigger: "manual", 
-              customClass: "code-copy-button-tooltip",
-              offset: [0, -8]});
-          tooltip.show();    
-        }
-        setTimeout(function() {
-          if (tooltip) {
-            tooltip.hide();
-            button.removeAttribute("data-bs-title");
-            button.removeAttribute("data-bs-toggle");
-            button.removeAttribute("data-bs-placement");
-          }
-          button.setAttribute("title", currentTitle);
-          button.classList.remove('code-copy-button-checked');
-        }, 1000);
-        // clear code selection
-        e.clearSelection();
-      }
-      const getTextToCopy = function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
             }
           }
-          return codeEl.innerText;
-      }
-      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-        text: getTextToCopy
-      });
-      clipboard.on('success', onCopySuccess);
-      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-          text: getTextToCopy,
-          container: window.document.getElementById('quarto-embedded-source-code-modal')
-        });
-        clipboardModal.on('success', onCopySuccess);
-      }
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp('/' + window.location.host + '/');
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          return false;
         }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-            // undo the damage that might have been done by quarto-nav.js in the case of
-            // links that we want to consider external
-            if (link.dataset.originalHref !== undefined) {
-              link.href = link.dataset.originalHref;
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
             }
-          }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
         }
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-        const config = {
-          allowHTML: true,
-          maxWidth: 500,
-          delay: 100,
-          arrow: false,
-          appendTo: function(el) {
-              return el.closest('section.slide') || el.parentElement;
-          },
-          interactive: true,
-          interactiveBorder: 10,
-          theme: 'light-border',
-          placement: 'bottom-start',
-        };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
-          config['offset'] = [0,0];
-          config['maxWidth'] = 700;
-        window.tippy(el, config); 
-      }
-      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-      for (var i=0; i<noterefs.length; i++) {
-        const ref = noterefs[i];
-        tippyHover(ref, function() {
-          // use id or data attribute instead here
-          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-          try { href = new URL(href).hash; } catch {}
-          const id = href.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note) {
-            return note.innerHTML;
-          } else {
-            return "";
-          }
-        });
-      }
-      const findCites = (el) => {
-        const parentEl = el.parentElement;
-        if (parentEl) {
-          const cites = parentEl.dataset.cites;
-          if (cites) {
-            return {
-              el,
-              cites: cites.split(' ')
-            };
-          } else {
-            return findCites(el.parentElement)
-          }
-        } else {
-          return undefined;
-        }
-      };
-      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-      for (var i=0; i<bibliorefs.length; i++) {
-        const ref = bibliorefs[i];
-        const citeInfo = findCites(ref);
-        if (citeInfo) {
-          tippyHover(citeInfo.el, function() {
-            var popup = window.document.createElement('div');
-            citeInfo.cites.forEach(function(cite) {
-              var citeDiv = window.document.createElement('div');
-              citeDiv.classList.add('hanging-indent');
-              citeDiv.classList.add('csl-entry');
-              var biblioDiv = window.document.getElementById('ref-' + cite);
-              if (biblioDiv) {
-                citeDiv.innerHTML = biblioDiv.innerHTML;
+        const getTextToCopy = function(trigger) {
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
               }
-              popup.appendChild(citeDiv);
-            });
-            return popup.innerHTML;
+            }
+            return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
           });
         }
-      }
-    });
-    </script>
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
     
 
 </body></html>
