@@ -38,8 +38,6 @@ Put your answer in the chat!
 
 1. Data Wrangling and Data Viz Questions
 
-1. Project Examples
-
 1. Quarto Exercise
 
 1. Quarto Tips
@@ -79,8 +77,6 @@ Source: [rstats.wtf](https://rstats.wtf/source-and-blank-slates)
 ::: {.notes}
 https://rfortherestofus.com/courses/r-in-3-months-spring-2025/lessons/an-important-workflow-tip-v2
 :::
-
-# Project Examples {.inverse}
 
 # Quarto {.inverse}
 
@@ -214,6 +210,15 @@ Column 2
 - For PDF, check out [`typst` format](https://quarto.org/docs/output-formats/typst.html)
 
 - There are lessons on each of these later in R in 3 Months!
+
+# Quick note about projects with Quarto {.inverse}
+
+::: {.notes}
+* A project with a Quarto file works different than a Quarto project
+* For this program, keep your Quarto file on the root directory
+* Gracielle will record an extra lesson about that!
+
+:::
 
 ## Any Other Quarto Questions? {.inverse}
 
