@@ -211,6 +211,18 @@ Column 2
 
 - There are lessons on each of these later in R in 3 Months!
 
+---
+
+### `brand.yml` {.inverse}
+
+::: {.notes}
+https://posit-dev.github.io/brand-yml/
+
+https://rfortherestofus.com/2025/06/podcast-episode-27
+:::
+
+
+
 # Quick note about projects with Quarto {.inverse}
 
 ::: {.notes}
