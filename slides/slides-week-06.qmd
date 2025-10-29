@@ -54,7 +54,6 @@ https://cheatsheets.rfortherestofus.com/cheatsheets-rin3.pdf
 https://cheatsheets.rfortherestofus.com/cheatsheets-rin3.html
 :::
 
-## Discord {.inverse}
 
 ## What Does the Rest of R in 3 Months Look Like?
 
@@ -76,7 +75,7 @@ https://cheatsheets.rfortherestofus.com/cheatsheets-rin3.html
 
 ## Access to Materials
 
-- You have access to course materials and coach feedback FOREVER
+- You have access to course materials and published coach feedback FOREVER
 
 # Tidy Data {.inverse}
 
@@ -205,7 +204,7 @@ favorite_sports |>
 
 ## Tidy Data Question
 
-> When working with "select all that apply" variables in the past in datasets where one row = one individual, I've typically dealt with this by converting each response option to its own column where a 1 ("yes") is present if that response option was selected. This has worked well for my purposes, but I understand now that it violates Tidy Data Rule 1 because a single variable is spread across multiple columns. Am I understanding correctly that while the approach I've used in the paste is not inherently better or worse than tidy format, the advantage to making it tidy is that it will be easier to analyze using tidyverse? Is this still true if the unit of analysis I'm interested in is the individual and not the activity (for example)?
+> When working with "select all that apply" variables in the past in datasets where one row = one individual, I've typically dealt with this by converting each response option to its own column where a 1 ("yes") is present if that response option was selected. This has worked well for my purposes, but I understand now that it violates Tidy Data Rule 1 because a single variable is spread across multiple columns. Am I understanding correctly that while the approach I've used in the past is not inherently better or worse than tidy format, the advantage to making it tidy is that it will be easier to analyze using tidyverse? Is this still true if the unit of analysis I'm interested in is the individual and not the activity (for example)?
 
 ::: notes
 https://rfortherestofus.com/2022/05/select-all
@@ -213,8 +212,6 @@ https://rfortherestofus.com/2022/05/select-all
 
 
 # Tidy Data Live Coding {.inverse}
-
-## David {.inverse}
 
 ::: {.notes}
 Rule 1: start/end stuff
@@ -230,7 +227,6 @@ Show converting character data into numeric
 Recategorize race + ethnicity
 :::
 
-## Gracielle {.inverse}
 
 # Misc Questions {.inverse .hidden}
 
