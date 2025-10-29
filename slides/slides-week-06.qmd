@@ -133,13 +133,13 @@ life_expectancy_over_time |>
 #| echo: false
 my_addresses <-
   tribble(
-    ~time_period,
-    ~address,
-    "Childhood",
-    "537 Westdale Avenue, Swarthmore, PA, 19801",
-    "Childhood",
-    "690 Omar Circle, Yellow Springs, OH, 45387",
-    "Grad School",
+    ~time_period                                 ,
+    ~address                                     ,
+    "Childhood"                                  ,
+    "537 Westdale Avenue, Swarthmore, PA, 19801" ,
+    "Childhood"                                  ,
+    "690 Omar Circle, Yellow Springs, OH, 45387" ,
+    "Grad School"                                ,
     "3809 Meade Avenue, San Diego, CA, 92116"
   )
 ```
@@ -173,15 +173,15 @@ Think about unit of analysis
 #| echo: false
 favorite_sports <-
   tribble(
-    ~name,
-    ~favorite_sport,
-    "David",
-    "Soccer, Basketball",
-    "Elias",
-    "Baseball, Soccer, Skiing",
-    "Leila",
-    "Aerial Dance, Roller Skating",
-    "Rachel",
+    ~name                          ,
+    ~favorite_sport                ,
+    "David"                        ,
+    "Soccer, Basketball"           ,
+    "Elias"                        ,
+    "Baseball, Soccer, Skiing"     ,
+    "Leila"                        ,
+    "Aerial Dance, Roller Skating" ,
+    "Rachel"                       ,
     "Soccer, Baseball"
   )
 ```
@@ -218,7 +218,7 @@ Rule 1: start/end stuff
 
 Rule 3: Pre/Post weight + Address
 
-Rule 2: None
+Rule 2: Create demographics and favorite_parts df
 
 Show breaking things into pieces
 
