@@ -49,9 +49,9 @@ https://rin3fall2025.rfortherestofus.com/slides/slides-week-07.html
 I'm seeing a difference in the syntax used in the main video vs the solution video and am wondering if you can please explain the difference. In the main video, you use `separate_longer_delim(cols = activities,...` but the solution video uses `separate_longer_delim(partyid,...` without the use of `cols =`.
 
 ::: {.notes}
-https://rfortherestofus.com/courses/r-in-3-months-spring-2025/lessons/tidy-data-rule-2-every-row-is-an-observation
+https://rfortherestofus.com/courses/r-in-3-months-fall-2025/lessons/tidy-data-rule-2-every-row-is-an-observation
 
-https://rfortherestofus.com/courses/r-in-3-months-spring-2025/lessons/using-function-arguments
+https://rfortherestofus.com/courses/r-in-3-months-fall-2025/lessons/using-function-arguments
 :::
 
 # Functions {.inverse}
@@ -66,7 +66,7 @@ https://rfortherestofus.com/courses/r-in-3-months-spring-2025/lessons/using-func
 - Show how to add argument to function to calculate number of cookies
 :::
 
-
+## Advanced Functions {.inverse}
 
 # Next Week
 
