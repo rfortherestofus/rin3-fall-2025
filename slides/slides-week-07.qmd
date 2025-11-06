@@ -26,6 +26,8 @@ editor_options:
 
 1. Housekeeping
 
+1. Questions on Tidy Data?
+
 1. Question on Function Arguments
 
 1. Functions
@@ -51,6 +53,8 @@ https://rin3fall2025.rfortherestofus.com/slides/slides-week-07.html
 -   Week 12: Advanced Quarto
 
 -   Week 13: Wrap Up
+
+# Questions on Tidy Data? {.inverse}
 
 # Question on Function Arguments
 
