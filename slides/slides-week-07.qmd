@@ -38,9 +38,19 @@ https://rin3fall2025.rfortherestofus.com/slides/slides-week-07.html
 
 # Housekeeping {.inverse}
 
----
+## Remaining Weeks
 
-- Join Discord if you haven't and are interested!
+-   Week 8: Advanced Data Wrangling, Part 3 (Data Merging and Exporting Data)
+
+-   Week 9: Advanced Data Viz, Part 1 (Highlighting and Decluttering)
+
+-   Week 10: Catch-Up Week
+
+-   Week 11: Advanced Data Viz, Part 2 (Explaining and Making Your Viz Sparkle)
+
+-   Week 12: Advanced Quarto
+
+-   Week 13: Wrap Up
 
 # Question on Function Arguments
 
