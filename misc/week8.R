@@ -4,54 +4,58 @@ library(tidyverse)
 
 names_and_ages <-
   tribble(
-    ~name,
-    ~age,
-    "David",
-    "45",
-    "Rachel",
-    "45",
-    "Leila",
-    "8",
-    "Elias",
-    "8 years old (born in 2016)",
-    "Diego",
+    ~name                        ,
+    ~age                         ,
+    "David"                      ,
+    "45"                         ,
+    "Rachel"                     ,
+    "45"                         ,
+    "Leila"                      ,
+    "8"                          ,
+    "Elias"                      ,
+    "8 years old (born in 2016)" ,
+    "Diego"                      ,
     "No longer alive"
   )
 
 names_and_ages
 
 names_and_ages |>
-  mutate(age_v2 = as.numeric(age))
-
-names_and_ages |>
-  mutate(age_v2 = parse_number(age))
+  mutate(age_as_numeric = as.numeric(age)) |>
+  mutate(age_parse_number = parse_number(age))
 
 
 # case_match() ------------------------------------------------------------
 
 countries <-
   tribble(
-    ~country_name,
-    "USA",
-    "US",
-    "United States of America",
+    ~country_name              ,
+    "USA"                      ,
+    "US"                       ,
+    "United States of America" ,
     "Canada"
   )
 
+countries
+
 countries |>
-  mutate(country_name_v2 = case_match(
-    country_name,
-    "USA" ~ "USA",
-    "US" ~ "USA",
-    "United States of America" ~ "USA",
-    "Canada" ~ "Canada"
-  ))
+  mutate(
+    country_name_v2 = case_match(
+      country_name,
+      "USA" ~ "USA",
+      "US" ~ "USA",
+      "United States of America" ~ "USA",
+      "Canada" ~ "Canada"
+    )
+  )
 
 # case_match() vs case_when() ---------------------------------------------
 
 library(palmerpenguins)
 
 data(penguins)
+
+penguins
 
 penguins |>
   select(species) |>
@@ -62,8 +66,7 @@ penguins |>
       "Chinstrap" ~ "Island 2",
       "Gentoo" ~ "Island 3"
     )
-  ) |>
-  view()
+  )
 
 penguins |>
   select(species) |>
@@ -73,8 +76,7 @@ penguins |>
       species == "Chinstrap" ~ "Island 2",
       species == "Gentoo" ~ "Island 3"
     )
-  ) |>
-  view()
+  )
 
 penguins |>
   select(species, bill_length_mm) |>
@@ -83,8 +85,7 @@ penguins |>
       species == "Adelie" & bill_length_mm > 35 ~ "Big Adelie Penguins",
       .default = "Other"
     )
-  ) |>
-  view()
+  )
 
 # Joins with mismatched variable types ------------------------------------
 
@@ -98,20 +99,13 @@ prices <-
   tibble(
     id = c("1", "2", "3", "4"),
     price = c(0.99, 1.50, 2.00, 2.50)
-  ) |>
-  mutate(id = parse_number(id))
-
-# left_join(
-#   fruits,
-#   prices,
-#   join_by(id)
-# )
-
-fruits |>
-  left_join(
-    prices,
-    join_by(id)
   )
+
+left_join(
+  fruits,
+  prices,
+  join_by(id)
+)
 
 # Many-to-many joins ------------------------------------------------------
 
@@ -130,11 +124,17 @@ inventory <-
     stock = c(100, 150, 75)
   )
 
-orders |>
-  left_join(
-    inventory,
-    join_by(product, location)
-  )
+left_join(
+  orders,
+  inventory,
+  join_by(product)
+)
+
+left_join(
+  orders,
+  inventory,
+  join_by(product, location)
+)
 
 # Iteration --------------------------------------------------------------
 
@@ -205,8 +205,8 @@ oregon_counties <-
   distinct(geography) |>
   pull(geography)
 
-all_plots <- 
-map(
-  oregon_counties,
-  make_total_population_plot
-)
+all_plots <-
+  walk(
+    oregon_counties,
+    make_total_population_plot
+  )
