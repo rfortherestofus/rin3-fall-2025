@@ -9,11 +9,11 @@ names_and_ages <-
     "David"                      ,
     "45"                         ,
     "Rachel"                     ,
-    "45"                         ,
+    "46"                         ,
     "Leila"                      ,
-    "8"                          ,
+    "9"                          ,
     "Elias"                      ,
-    "8 years old (born in 2016)" ,
+    "9 years old (born in 2016)" ,
     "Diego"                      ,
     "No longer alive"
   )

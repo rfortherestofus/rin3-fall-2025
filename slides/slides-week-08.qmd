@@ -44,8 +44,6 @@ https://rin3fall2025.rfortherestofus.com/slides/slides-week-08.html
 
 ## Housekeeping
 
-- Week 8 Project assignment
-
 - Week 9: Advanced data viz
 
 - Week 10: Catch-up week
