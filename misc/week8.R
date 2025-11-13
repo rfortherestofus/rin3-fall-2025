@@ -4,17 +4,17 @@ library(tidyverse)
 
 names_and_ages <-
   tribble(
-    ~name                        ,
-    ~age                         ,
-    "David"                      ,
-    "45"                         ,
-    "Rachel"                     ,
-    "46"                         ,
-    "Leila"                      ,
-    "9"                          ,
-    "Elias"                      ,
-    "9 years old (born in 2016)" ,
-    "Diego"                      ,
+    ~name,
+    ~age,
+    "David",
+    "45",
+    "Rachel",
+    "46",
+    "Leila",
+    "9",
+    "Elias",
+    "9 years old (born in 2016)",
+    "Diego",
     "No longer alive"
   )
 
@@ -29,10 +29,10 @@ names_and_ages |>
 
 countries <-
   tribble(
-    ~country_name              ,
-    "USA"                      ,
-    "US"                       ,
-    "United States of America" ,
+    ~country_name,
+    "USA",
+    "US",
+    "United States of America",
     "Canada"
   )
 
@@ -47,7 +47,8 @@ countries |>
       "United States of America" ~ "USA",
       "Canada" ~ "Canada"
     )
-  )
+  ) |>
+  count(country_name_v2)
 
 # case_match() vs case_when() ---------------------------------------------
 
@@ -82,24 +83,30 @@ penguins |>
   select(species, bill_length_mm) |>
   mutate(
     species_and_length = case_when(
-      species == "Adelie" & bill_length_mm > 35 ~ "Big Adelie Penguins",
+      species == "Adelie" & bill_length_mm > 35 ~ "Big Adelie Penguin",
+      species == "Adelie" & bill_length_mm <= 35 ~ "Small Adelie Penguin",
       .default = "Other"
     )
-  )
+  ) |>
+  group_by(species_and_length) |>
+  summarize(avg_bill_length = mean(bill_length_mm, na.rm = TRUE))
 
 # Joins with mismatched variable types ------------------------------------
 
 fruits <-
   tibble(
     id = c(1, 2, 3, 4),
-    value = c("apple", "banana", "cherry", "date")
+    name = c("apple", "banana", "cherry", "date")
   )
 
 prices <-
   tibble(
     id = c("1", "2", "3", "4"),
     price = c(0.99, 1.50, 2.00, 2.50)
-  )
+  ) |>
+  mutate(id = parse_number(id))
+
+prices
 
 left_join(
   fruits,
@@ -128,7 +135,8 @@ left_join(
   orders,
   inventory,
   join_by(product)
-)
+) |>
+  view()
 
 left_join(
   orders,
@@ -148,19 +156,22 @@ total_population_2019 <-
     "data-raw/2019-obtn-by-county.xlsx",
     sheet = "Total Population"
   ) |>
-  clean_names()
+  clean_names() |>
+  mutate(year = 2019)
 
 total_population_2020 <-
   read_excel(
     "data-raw/2020-obtn-by-county.xlsx",
     sheet = "Total Population"
   ) |>
-  clean_names()
+  clean_names() |>
+  mutate(year = 2020)
 
-bind_rows(
-  total_population_2019,
-  total_population_2020
-)
+total_population <-
+  bind_rows(
+    total_population_2019,
+    total_population_2020
+  )
 
 import_single_year_data <- function(year) {
   read_excel(
@@ -171,14 +182,20 @@ import_single_year_data <- function(year) {
     mutate(data_year = year)
 }
 
-import_single_year_data(year = 2020)
+import_single_year_data(year = 2021)
+
+obtn_years <- 2019:2023
 
 total_population <-
   map(
-    2019:2023,
+    obtn_years,
     import_single_year_data
   ) |>
   bind_rows()
+
+total_population |>
+  group_by(data_year) |>
+  summarize(avg_population = mean(population))
 
 # Make multiple plots
 
@@ -205,8 +222,63 @@ oregon_counties <-
   distinct(geography) |>
   pull(geography)
 
-all_plots <-
-  walk(
-    oregon_counties,
-    make_total_population_plot
+walk(
+  oregon_counties,
+  make_total_population_plot
+)
+
+
+# walk2 -------------------------------------------------------------------
+
+make_total_population_plot_single_year <- function(county_to_highlight, year) {
+  total_population |>
+    filter(geography != "Urban") |>
+    filter(geography != "Rural") |>
+    filter(geography != "Oregon") |>
+    mutate(highlight_county = if_else(geography == county_to_highlight, "Y", "N")) |>
+    filter(data_year == year) |>
+    ggplot(
+      aes(
+        x = population,
+        y = geography,
+        fill = highlight_county
+      )
+    ) +
+    geom_col() +
+    scale_fill_manual(
+      values = c(
+        "Y" = "red",
+        "N" = "gray"
+      )
+    )
+
+  ggsave(
+    filename = str_glue("plots/{county_to_highlight}-{year}.png")
   )
+}
+
+make_total_population_plot_single_year(
+  county_to_highlight = "Baker",
+  year = 2022
+)
+
+all_counties_all_years <-
+  total_population |>
+  distinct(geography, data_year) |>
+  filter(geography != "Urban") |>
+  filter(geography != "Rural") |>
+  filter(geography != "Oregon")
+
+counties <-
+  all_counties_all_years |>
+  pull(geography)
+
+years <-
+  all_counties_all_years |>
+  pull(data_year)
+
+walk2(
+  counties,
+  years,
+  make_total_population_plot_single_year
+)
