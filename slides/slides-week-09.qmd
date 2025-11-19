@@ -42,9 +42,9 @@ https://rin3fall2025.rfortherestofus.com/slides/slides-week-09.html
 
 Remaining weeks:
 
-- Week 10: Advanced data viz, part 2
+- Week 10: Catch-up week (no live session or co-working session)
 
-- Week 11: Catch-up week (no live session or co-working session)
+- Week 11: Advanced data viz, part 2 (making your own ggplot theme)
 
 - Week 12: Advanced Quarto
 
@@ -52,12 +52,8 @@ Remaining weeks:
 
 # Housekeeping
 
-You can get feedback from your coach through the end of June
-
-. . .
-
-You have access to materials FOREVER!
-
+- You can get feedback from your coach through the end of December
+- You have access to materials FOREVER!
 
 # Advanced Data Viz {.inverse}
 
