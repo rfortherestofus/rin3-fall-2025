@@ -6,8 +6,8 @@
 <script src="slides-week-09_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="slides-week-09_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="slides-week-09_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="slides-week-09_files/libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.31">
+<link href="slides-week-09_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.26">
 
   <title>R in 3 Months Week 9 (Advanced Data Viz, Part 1)</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -28,7 +28,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="slides-week-09_files/libs/revealjs/dist/theme/quarto-60f888cd3db5145ade4b8c62980eae51.css">
+  <link rel="stylesheet" href="slides-week-09_files/libs/revealjs/dist/theme/quarto-3ba29524185537f454d304d0a1c4b243.css">
   <link href="slides-week-09_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="slides-week-09_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="slides-week-09_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -157,6 +157,11 @@
 
 <section id="housekeeping" class="title-slide slide level1 center">
 <h1>Housekeeping</h1>
+<p>Co-working session</p>
+</section>
+
+<section id="housekeeping-1" class="title-slide slide level1 center">
+<h1>Housekeeping</h1>
 <div class="fragment">
 <p>Remaining weeks:</p>
 <ul>
@@ -168,7 +173,7 @@
 </div>
 </section>
 
-<section id="housekeeping-1" class="title-slide slide level1 center">
+<section id="housekeeping-2" class="title-slide slide level1 center">
 <h1>Housekeeping</h1>
 <ul>
 <li class="fragment">You can get feedback from your coach through the end of December</li>
@@ -428,7 +433,7 @@
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -502,13 +507,14 @@
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy
