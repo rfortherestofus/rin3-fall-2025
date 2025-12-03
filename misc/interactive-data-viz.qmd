@@ -28,21 +28,25 @@ cbem |>
   filter(location == "Oregon") |>
   filter(age_group == "Under 18") |>
   filter(group != "All Persons") |>
-  mutate(group = fct(
-    group,
-    levels = c(
-      "American Indian or Alaska Native",
-      "Asian or Pacific Islander",
-      "Black or African American",
-      "White",
-      "Hispanic or Latino"
+  mutate(
+    group = fct(
+      group,
+      levels = c(
+        "American Indian or Alaska Native",
+        "Asian or Pacific Islander",
+        "Black or African American",
+        "White",
+        "Hispanic or Latino"
+      )
     )
-  )) |>
+  ) |>
   mutate(x_position = row_number()) |>
-  mutate(x_position = case_when(
-    group == "Hispanic or Latino" ~ 5.5,
-    .default = x_position
-  )) |>
+  mutate(
+    x_position = case_when(
+      group == "Hispanic or Latino" ~ 5.5,
+      .default = x_position
+    )
+  ) |>
   mutate(percent_formatted = percent(percent)) |>
   ggplot(
     aes(
@@ -79,21 +83,25 @@ cbem_interactive_plot <-
   filter(location == "Oregon") |>
   filter(age_group == "Under 18") |>
   filter(group != "All Persons") |>
-  mutate(group = fct(
-    group,
-    levels = c(
-      "American Indian or Alaska Native",
-      "Asian or Pacific Islander",
-      "Black or African American",
-      "White",
-      "Hispanic or Latino"
+  mutate(
+    group = fct(
+      group,
+      levels = c(
+        "American Indian or Alaska Native",
+        "Asian or Pacific Islander",
+        "Black or African American",
+        "White",
+        "Hispanic or Latino"
+      )
     )
-  )) |>
+  ) |>
   mutate(x_position = row_number()) |>
-  mutate(x_position = case_when(
-    group == "Hispanic or Latino" ~ 5.5,
-    .default = x_position
-  )) |>
+  mutate(
+    x_position = case_when(
+      group == "Hispanic or Latino" ~ 5.5,
+      .default = x_position
+    )
+  ) |>
   mutate(percent_formatted = percent(percent)) |>
   ggplot(
     aes(
