@@ -9,6 +9,8 @@ portland_boundaries <-
   clean_names() |>
   filter(cityname == "Portland")
 
+portland_boundaries
+
 portland_boundaries |>
   ggplot() +
   geom_sf()
@@ -17,27 +19,40 @@ traffic_signals <-
   read_sf("data-raw/Traffic_Signals.geojson") |>
   clean_names()
 
+traffic_signals
+
 traffic_signals |>
   ggplot() +
-  geom_sf()
+  geom_sf(size = 0.25)
 
 snow_and_ice_routes <-
   read_sf("data-raw/Snow_and_Ice_Routes.geojson") |>
   clean_names()
 
+snow_and_ice_routes
+
 snow_and_ice_routes |>
   ggplot() +
-  geom_sf()
+  geom_sf(aes(color = priority))
 
 ggplot() +
-  geom_sf(data = portland_boundaries) +
+  geom_sf(
+    data = portland_boundaries,
+    fill = "gray80",
+    alpha = 0.5
+  ) +
+  geom_sf(
+    data = snow_and_ice_routes,
+    alpha = 0.5
+  ) +
   geom_sf(
     data = traffic_signals,
     aes(color = software_type),
     alpha = 0.5,
     size = 1
   ) +
-  geom_sf(data = snow_and_ice_routes)
+  theme_dk(hide_gridlines = TRUE, hide_legend = TRUE)
+
 
 # Tigris ------------------------------------------------------------------
 
@@ -45,12 +60,16 @@ library(tigris)
 
 us_states <- states()
 
+us_states
+
 us_states |>
   shift_geometry() |>
   ggplot() +
   geom_sf()
 
 kentucky_counties <- counties(state = "Kentucky")
+
+kentucky_counties
 
 kentucky_counties |>
   ggplot() +
@@ -63,11 +82,13 @@ library(scales)
 
 median_income <-
   get_acs(
-    state = "Washington",
+    state = "Illinois",
     geography = "county",
     variables = "B19013_001",
     geometry = TRUE
   )
+
+median_income
 
 median_income |>
   ggplot(aes(fill = estimate)) +
@@ -78,16 +99,24 @@ median_income |>
 
 library(rnaturalearth)
 
-iceland <-
-  ne_countries(
-    country = "Iceland",
-    scale = "large",
-    returnclass = "sf"
-  ) |>
-  select(sovereignt)
+?rnaturalearth::ne_countries()
 
-ggplot(data = iceland) +
+
+ne_countries(
+  country = c("Ukraine"),
+  scale = "large",
+  returnclass = "sf"
+) |>
+  select(sovereignt) |>
+  ggplot() +
   geom_sf()
+
+
+# Mapview -----------------------------------------------------------------
+
+library(mapview)
+
+mapview(us_states)
 
 
 # Interactive -------------------------------------------------------------
@@ -98,7 +127,7 @@ median_income_interactive_plot <-
   median_income |>
   ggplot(aes(
     fill = estimate,
-    tooltip = estimate
+    tooltip = estimate |> dollar()
   )) +
   geom_sf_interactive()
 

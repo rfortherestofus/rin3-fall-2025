@@ -6,8 +6,8 @@
 <script src="slides-week-12_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="slides-week-12_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="slides-week-12_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="slides-week-12_files/libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.30">
+<link href="slides-week-12_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.26">
 
   <title>R in 3 Months Week 12 (Advanced Quarto)</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -28,7 +28,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="slides-week-12_files/libs/revealjs/dist/theme/quarto-60f888cd3db5145ade4b8c62980eae51.css">
+  <link rel="stylesheet" href="slides-week-12_files/libs/revealjs/dist/theme/quarto-3ba29524185537f454d304d0a1c4b243.css">
   <link href="slides-week-12_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="slides-week-12_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="slides-week-12_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -136,7 +136,6 @@
 <h1>Agenda</h1>
 <ol type="1">
 <li class="fragment"><p>Housekeeping</p></li>
-<li class="fragment"><p>Misc Questions</p></li>
 <li class="fragment"><p>Parameterized Reporting</p></li>
 <li class="fragment"><p>Next Week</p></li>
 </ol>
@@ -158,17 +157,8 @@
 <section id="housekeeping" class="title-slide slide level1 center">
 <h1>Housekeeping</h1>
 <ol type="1">
-<li class="fragment"><p>Next week is the last live session, but you can get feedback through end of June</p></li>
+<li class="fragment"><p>Next week is the last live session, but you can get feedback through end of December</p></li>
 <li class="fragment"><p>You’ll have access to course materials forever!</p></li>
-</ol>
-</section>
-
-<section id="misc-questions" class="title-slide slide level1 inverse center">
-<h1>Misc Questions</h1>
-<ol type="1">
-<li class="fragment"><p>Functions that take variables as arguments</p></li>
-<li class="fragment"><p>Dealing with fonts in various places</p></li>
-<li class="fragment"><p>Setting default color/fill palettes</p></li>
 </ol>
 </section>
 
@@ -222,6 +212,23 @@
 
 <img data-src="assets/ivac-country-reports.png" class="quarto-figure quarto-figure-center r-stretch"><aside class="notes">
 <p>https://www.jhsph.edu/ivac/resources/pdpr/</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2 center">
+
+<p><a href="https://publichealth.jhu.edu/ivac/monitoring-childhood-immunization-at-the-state-level"><img data-src="assets/colorado-report-two-pages.png"></a></p>
+<aside class="notes">
+<p>https://publichealth.jhu.edu/ivac/monitoring-childhood-immunization-at-the-state-level</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -345,12 +352,18 @@ pwalk(reports, quarto_render)</code></pre>
 </section></section>
 <section id="next-week" class="title-slide slide level1 center">
 <h1>Next Week</h1>
-<ol type="1">
-<li class="fragment"><p>Surveys on your <a href="https://rfortherestofus.com/courses/r-in-3-months-spring-2025/lessons/r-in-3-months-progress-survey">progress</a> and on <a href="https://rfortherestofus.com/courses/r-in-3-months-spring-2025/lessons/r-in-3-months-feedback-survey">feedback</a> for R in 3 Months</p></li>
+<ul>
+<li class="fragment"><p>Surveys on your <a href="https://rfortherestofus.com/courses/r-in-3-months-fall-2025/lessons/r-in-3-months-progress-survey">progress</a> and on <a href="https://rfortherestofus.com/courses/r-in-3-months-fall-2025/lessons/r-in-3-months-feedback-survey">feedback</a> for R in 3 Months</p></li>
 <li class="fragment"><p>Please complete final projects <strong>even if you haven’t completed every single lesson</strong></p></li>
 <li class="fragment"><p>Add info about your final project on <a href="https://docs.google.com/presentation/d/1crH3G9yiksU_INYET-UGhIofWMwQQtkJJAjvEwLzyxE/edit?usp=sharing">this Google Slides presentation</a></p></li>
-<li class="fragment"><p>Next week we’ll talk about your progress (including showing some final projects) and discuss where you go after R in 3 Months to continue learning R</p></li>
-</ol>
+</ul>
+</section>
+
+<section id="next-week-1" class="title-slide slide level1 center">
+<h1>Next Week</h1>
+<ul>
+<li class="fragment">Next week we’ll talk about your progress (including showing some final projects) and discuss where you go after R in 3 Months to continue learning R</li>
+</ul>
 
 </section>
     </div>
@@ -542,7 +555,7 @@ pwalk(reports, quarto_render)</code></pre>
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -654,13 +667,14 @@ pwalk(reports, quarto_render)</code></pre>
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

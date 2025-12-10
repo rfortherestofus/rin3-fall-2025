@@ -57,12 +57,7 @@ Please submit things!
 
 # Advanced Custom Themes {.inverse}
 
-::: {.notes}
-https://book.rfortherestofus.com/themes.html
 
-- Add hide_gridlines
-- Add hide_legend
-:::
 
 # Organizations with Public Custom {ggplot2} Themes 
 
@@ -79,6 +74,13 @@ https://book.rfortherestofus.com/themes.html
 * [Duke University's {duke} Package](https://aidangildea.github.io/duke/)
 
 * [University of Exeter's `theme_exeter()`](https://github.com/lukepilling/theme_exeter)
+
+::: {.notes}
+https://book.rfortherestofus.com/themes.html
+
+- Add hide_gridlines
+- Add hide_legend
+:::
 
 # Mapping {.inverse}
 

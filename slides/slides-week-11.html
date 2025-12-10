@@ -6,8 +6,8 @@
 <script src="slides-week-11_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="slides-week-11_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="slides-week-11_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="slides-week-11_files/libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.30">
+<link href="slides-week-11_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.26">
 
   <title>R in 3 Months Week 11 (Advanced Data Viz, Part 2)</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -28,7 +28,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="slides-week-11_files/libs/revealjs/dist/theme/quarto-60f888cd3db5145ade4b8c62980eae51.css">
+  <link rel="stylesheet" href="slides-week-11_files/libs/revealjs/dist/theme/quarto-3ba29524185537f454d304d0a1c4b243.css">
   <link href="slides-week-11_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="slides-week-11_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="slides-week-11_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -160,7 +160,7 @@
 <h1>Housekeeping</h1>
 <ol type="1">
 <li class="fragment"><p>Two more weeks: Advanced Quarto and final projects</p></li>
-<li class="fragment"><p>Final project is to record a video demonstrating something you’ve learned (<a href="https://rfortherestofus.com/courses/r-in-3-months-spring-2025/lessons/r-in-3-months-final-project">lesson</a>)</p></li>
+<li class="fragment"><p>Final project is to record a video demonstrating something you’ve learned (<a href="https://rfortherestofus.com/courses/r-in-3-months-fall-2025/lessons/fall-2024-r-in-3-months-final-project">lesson</a>)</p></li>
 </ol>
 <aside class="notes">
 <p>Please submit things!</p>
@@ -179,23 +179,7 @@
 
 <section id="advanced-custom-themes" class="title-slide slide level1 inverse center">
 <h1>Advanced Custom Themes</h1>
-<aside class="notes">
-<p>https://book.rfortherestofus.com/themes.html</p>
-<ul>
-<li>Add hide_gridlines</li>
-<li>Add hide_legend</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+
 </section>
 
 <section id="organizations-with-public-custom-ggplot2-themes" class="title-slide slide level1 center">
@@ -214,6 +198,23 @@
 <li class="fragment"><p><a href="https://aidangildea.github.io/duke/">Duke University’s {duke} Package</a></p></li>
 <li class="fragment"><p><a href="https://github.com/lukepilling/theme_exeter">University of Exeter’s <code>theme_exeter()</code></a></p></li>
 </ul>
+<aside class="notes">
+<p>https://book.rfortherestofus.com/themes.html</p>
+<ul>
+<li>Add hide_gridlines</li>
+<li>Add hide_legend</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 
 <section id="mapping" class="title-slide slide level1 inverse center">
@@ -457,7 +458,7 @@
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -569,13 +570,14 @@
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy
