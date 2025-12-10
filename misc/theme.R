@@ -26,7 +26,6 @@ theme_dk <- function(hide_gridlines = FALSE, hide_legend = FALSE) {
   my_theme
 }
 
-
 # Plots -------------------------------------------------------------------
 
 ggplot(
