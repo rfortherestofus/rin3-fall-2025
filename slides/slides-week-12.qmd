@@ -185,7 +185,11 @@ pwalk(reports, quarto_render)
   
 - Please complete final projects **even if you haven't completed every single lesson**
 
-- Add info about your final project on [this Google Slides presentation](https://docs.google.com/presentation/d/1crH3G9yiksU_INYET-UGhIofWMwQQtkJJAjvEwLzyxE/edit?usp=sharing)
+- Add info about your final project on [this Google Slides presentation](https://docs.google.com/presentation/d/1hDWjd-E2JLnVrRYF4l8VZSWqUIDrj49TTJwzu4hgx_I/edit?usp=sharing)
+
+::: {.notes}
+Examples from past cohort: https://docs.google.com/presentation/d/1crH3G9yiksU_INYET-UGhIofWMwQQtkJJAjvEwLzyxE/edit?usp=sharing
+:::
 
 # Next Week
 
